@@ -9,21 +9,21 @@ function keyDownEvent(e) {
     var timeStamp = Date.now() - startTime;
 
     // if not being pressed down before
-    if (getIndex(e.keyCode, beingPressed) == -1) {
+    if (getIndex(e.which, beingPressed) == -1) {
         // store in beingPressed
-        beingPressed.push({ keycode: e.keyCode, keyDownTimestamp: timeStamp });
+        beingPressed.push({ keycode: e.which, keyDownTimestamp: timeStamp });
     }
 
 }
 
 function keyUpEvent(e) {
     var timeStamp = Date.now() - startTime,
-        index = getIndex(e.keyCode, beingPressed);
+        index = getIndex(e.which, beingPressed);
 
     // error handling, key was not pushed before
     if (index == -1) {
-        console.log('WARN: key was not down before, code: ' + e.keyCode);
-        keystrokeLog.push({ keycode: e.keyCode, keyDownTimestamp: -1, keyUpTimestamp: timeStamp });
+        console.log('WARN: key was not down before, code: ' + e.which);
+        keystrokeLog.push({ keycode: e.which, keyDownTimestamp: -1, keyUpTimestamp: timeStamp });
         return false;
     }
 
@@ -32,7 +32,7 @@ function keyUpEvent(e) {
     // store info
     keystrokeLog.push(beingPressed[index]);
     // echo on console
-    console.log(beingPressed[index]);
+    console.log('"' + String.fromCharCode(beingPressed[index].keycode) +'"', beingPressed[index]);
     // delete from beingPressed
     beingPressed.splice(index, 1);
 }
