@@ -32,7 +32,7 @@ function keyUpEvent(e) {
     // store info
     keystrokeLog.push(beingPressed[index]);
     // echo on console
-    console.log('"' + String.fromCharCode(beingPressed[index].keycode) +'"', beingPressed[index]);
+    console.log('"' + keyboardMap[beingPressed[index].keycode] +'"', beingPressed[index]);
     // delete from beingPressed
     beingPressed.splice(index, 1);
 }
