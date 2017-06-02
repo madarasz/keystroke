@@ -28,8 +28,9 @@
             <label for="textarea">Type mofo!</label>
             <textarea class="form-control" rows="8" id="textarea"></textarea>
         </div>
-        <!--<button type="button" class="btn btn-primary">Submit</button>-->
+        <button type="button" class="btn btn-primary" onclick="drawChart()">Analyze</button>
     </form>
+    <div id="chart" style="height: 500px; margin-top: 2em;"></div>
 </div>
 
 
@@ -51,5 +52,10 @@
         <!--document.head.appendChild(msViewportStyle)-->
     <!--}-->
 <!--</script>-->
+
+<!--Google charts-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<!--own scripts for drawing the chart-->
+<script src="chart.js"></script>
 </body>
 </html>
