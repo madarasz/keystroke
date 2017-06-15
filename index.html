@@ -24,13 +24,56 @@
 <div class="container">
     <h3 class="mt-3 mb-3">Keystroke</h3>
     <form>
+        <!--Textarea-->
         <div class="form-group">
             <label for="textarea">Type mofo!</label>
             <textarea class="form-control" rows="8" id="textarea"></textarea>
         </div>
-        <button type="button" class="btn btn-primary" onclick="drawChart()">Show keylog</button>
+        <!--Questions-->
+        How was your day?
+        <br/>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option1"> 1
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option2"> 2
+            </label>
+        </div>
+        <div class="form-check form-check-inline disabled">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option3"> 3
+            </label>
+        </div>
+        <br/>
+        This is an important question about your personality:
+        <br/>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions2" value="option1"> 1
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions2" value="option2"> 2
+            </label>
+        </div>
+        <div class="form-check form-check-inline disabled">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions2" value="option3"> 3
+            </label>
+        </div>
+        <br/>
+        <!--Buttons-->
+        <button type="button" class="btn btn-primary" onclick="drawKeyboardChart()">Show keylog</button>
+        <button type="button" class="btn btn-info" onclick="drawMouseCharts()">Show mouselog</button>
     </form>
-    <div id="chart" style="height: 500px; margin-top: 2em;"></div>
+    <div id="chart-keyboard" class="hidden-xs-up mt-3"></div>
+    <div id="chart-mouse-movement"></div>
+    <div id="chart-mouse-speed"></div>
+    <div id="chart-mouse-acceleration"></div>
 </div>
 
 
